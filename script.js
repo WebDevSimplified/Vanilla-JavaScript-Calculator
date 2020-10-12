@@ -64,8 +64,7 @@ class Calculator {
         if(isNaN(integerDigits)) {
             integerDisplay = ''
         } else {
-            integerDisplay = integerDigits.toLocaleString('en', {
-            maximumFractionDigits: 0})
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0})
         }
         if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`
@@ -90,13 +89,12 @@ class Calculator {
 const numberButtons = document.querySelectorAll("[data-number]")
 const operationButtons = document.querySelectorAll("[data-operation]")
 const equalsButton = document.querySelector("[data-equals]")
-const deleteButton = document.querySelector("[data-dellete]")
+const deleteButton = document.querySelector("[data-delete]")
 const allClearButton = document.querySelector("[data-all-clear]")
 const previousOperandTextElement = document.querySelector("[data-previous-operand]")
 const currentOperandTextElemen = document.querySelector("[data-current-operand]")
 
-const calculator = new Calculator(previousOperandTextElement,
-currentOperandTextElemen)
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElemen)
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
