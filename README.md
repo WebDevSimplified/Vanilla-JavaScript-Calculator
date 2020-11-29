@@ -1,6 +1,7 @@
 # Vanilla-JavaScript-Calculator
 Pure vanilla JavaScript calculator using modern ES6 syntax and classes
 
+
 You can also demo this project by cloning this project in your Laptop or Computer.
 
 To do so, run the following command -
