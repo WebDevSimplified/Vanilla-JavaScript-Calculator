@@ -10,4 +10,4 @@ To do so, run the following command -
 git clone https://github.com/WebDevSimplified/Vanilla-JavaScript-Calculator.git
 ```
 
-Then you click on the newly created Vanilla-JavaScript-Calculator folder and open the index.html file in your preferred browser.
+Then you can click on the newly created Vanilla-JavaScript-Calculator folder and open the index.html file in your preferred browser.
