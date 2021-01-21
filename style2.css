@@ -1,0 +1,25 @@
+input[type="button"] 
+         { 
+         background-color:cyan; 
+         color: black;
+         border: solid black 2px; 
+         width:100%;
+         cursor: pointer;
+         } 
+         input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         width:100%;
+         }
+.Calculator{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body{
+  background: url(https://img.youtube.com/vi/5-LyRjHlRgQ/maxresdefault.jpg) no-repeat;
+  background-size: cover;
+}
