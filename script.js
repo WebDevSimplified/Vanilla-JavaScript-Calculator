@@ -16,9 +16,18 @@ class Calculator {
   }
 
   appendNumber(number) {
+    let Zero = true;
+
+    if(Zero && number == 0){
+      Zero = false;
+      this.clear();
+      this.previousOperandTextElement.innerText = 'Error'
+    } 
+    
     if (number === '.' && this.currentOperand.includes('.')) return
-    this.currentOperand = this.currentOperand.toString() + number.toString()
+      this.currentOperand = this.currentOperand.toString() + number.toString()
   }
+
 
   chooseOperation(operation) {
     if (this.currentOperand === '') return
