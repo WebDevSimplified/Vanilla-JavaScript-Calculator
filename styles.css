@@ -14,7 +14,7 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 100vh;
+  min-height: 101vh;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
@@ -22,7 +22,7 @@ body {
 .calculator-grid > button {
   cursor: pointer;
   font-size: 2rem;
-  border: 1px solid white;
+  border: 1px solid #fff;
   outline: none;
   background-color: rgba(255, 255, 255, .75);
 }
@@ -49,10 +49,10 @@ body {
 
 .output .previous-operand {
   color: rgba(255, 255, 255, .75);
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .output .current-operand {
-  color: white;
-  font-size: 2.5rem;
+  color: #fff;
+  font-size: 2rem;
 }
