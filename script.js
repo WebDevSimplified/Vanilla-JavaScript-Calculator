@@ -29,8 +29,82 @@ class Calculator {
 		this.previousOperand = this.currentOperand;
 		this.currentOperand = "";
 	}
+
 	percent() {
 		this.currentOperand = this.previousOperand / (100 / this.currentOperand);
+	}
+
+	carre() {
+		this.currentOperand *= this.currentOperand;
+	}
+
+	cube() {
+		this.currentOperand = this.currentOperand ** 3;
+	}
+
+	puissance() {
+		this.currentOperand = this.currentOperand ** 3;
+	}
+
+	ex() {
+		this.currentOperand = this.currentOperand ** 3;
+	}
+
+	dixx() {
+		this.currentOperand = this.currentOperand ** 3;
+	}
+
+	unsurx() {
+		this.currentOperand = 1 / this.currentOperand;
+	}
+
+	sqrt() {
+		this.currentOperand = Math.sqrt(this.currentOperand);
+	}
+
+	troissqrt() {
+		this.currentOperand = Math.sqrt(this.currentOperand);
+	}
+	ysqrt() {
+		this.currentOperand = Math.sqrt(this.currentOperand);
+	}
+
+	ln() {
+		this.currentOperand = Math.ln(this.currentOperand);
+	}
+
+	log10() {
+		this.currentOperand = Math.ln(this.currentOperand);
+	}
+
+	factorielle() {
+		console.log("factorielle");
+		console.log(this.currentOperand);
+		let fact = 1;
+		for (let i = 1; i <= this.currentOperand; i++) {
+			fact = i * fact;
+		}
+		this.currentOperand = fact;
+	}
+
+	sin() {
+		this.currentOperand = Math.sin(this.currentOperand);
+	}
+
+	cos() {
+		this.currentOperand = Math.cos(this.currentOperand);
+	}
+
+	tan() {
+		this.currentOperand = Math.tan(this.currentOperand);
+	}
+
+	e() {
+		this.currentOperand = Math.exp(1);
+	}
+
+	pi() {
+		this.currentOperand = Math.PI;
 	}
 
 	compute() {
@@ -93,9 +167,21 @@ const percentButton = document.querySelector("[data-percent]");
 const carreButton = document.querySelector("[data-carre]");
 const cubeButton = document.querySelector("[data-cube]");
 const puissanceButton = document.querySelector("[data-puissance]");
-const percentButton = document.querySelector("[data-percent]");
-const percentButton = document.querySelector("[data-percent]");
-const percentButton = document.querySelector("[data-percent]");
+const exButton = document.querySelector("[data-ex]");
+const dixxButton = document.querySelector("[data-dixx]");
+const unsurxButton = document.querySelector("[data-unsurx]");
+const sqrtButton = document.querySelector("[data-sqrt]");
+const troissqrtButton = document.querySelector("[data-troissqrt]");
+const ysqrtButton = document.querySelector("[data-ysqrt]");
+const lnButton = document.querySelector("[data-ln]");
+const log10Button = document.querySelector("[data-log10]");
+const factorielleButton = document.querySelector("[data-factorielle]");
+const sinButton = document.querySelector("[data-sin]");
+const cosButton = document.querySelector("[data-cos]");
+const tanButton = document.querySelector("[data-tan]");
+const eButton = document.querySelector("[data-e]");
+const EEButton = document.querySelector("[data-EE]");
+const piButton = document.querySelector("[data-pi]");
 const deleteButton = document.querySelector("[data-delete]");
 const allClearButton = document.querySelector("[data-all-clear]");
 const previousOperandTextElement = document.querySelector("[data-previous-operand]");
@@ -127,9 +213,93 @@ allClearButton.addEventListener("click", button => {
 	calculator.updateDisplay();
 });
 percentButton.addEventListener("click", button => {
-	console.log("percent");
-	console.log(this.currentOperand);
 	calculator.percent();
+	calculator.updateDisplay();
+});
+
+carreButton.addEventListener("click", button => {
+	calculator.carre();
+	calculator.updateDisplay();
+});
+
+cubeButton.addEventListener("click", button => {
+	calculator.cube();
+	calculator.updateDisplay();
+});
+// a faire
+puissanceButton.addEventListener("click", button => {
+	calculator.cube();
+	calculator.updateDisplay();
+});
+
+// a faire
+exButton.addEventListener("click", button => {
+	calculator.ex();
+	calculator.updateDisplay();
+});
+// a faire
+dixxButton.addEventListener("click", button => {
+	calculator.dixx();
+	calculator.updateDisplay();
+});
+
+unsurxButton.addEventListener("click", button => {
+	calculator.unsurx();
+	calculator.updateDisplay();
+});
+
+sqrtButton.addEventListener("click", button => {
+	calculator.sqrt();
+	calculator.updateDisplay();
+});
+
+troissqrtButton.addEventListener("click", button => {
+	calculator.sqrt();
+	calculator.updateDisplay();
+});
+
+ysqrtButton.addEventListener("click", button => {
+	calculator.sqrt();
+	calculator.updateDisplay();
+});
+
+lnButton.addEventListener("click", button => {
+	calculator.log();
+	calculator.updateDisplay();
+});
+
+log10Button.addEventListener("click", button => {
+	calculator.log10();
+	calculator.updateDisplay();
+});
+
+factorielleButton.addEventListener("click", button => {
+	calculator.factorielle();
+	calculator.updateDisplay();
+});
+
+sinButton.addEventListener("click", button => {
+	calculator.sin();
+	calculator.updateDisplay();
+});
+
+cosButton.addEventListener("click", button => {
+	calculator.cos();
+	calculator.updateDisplay();
+});
+
+tanButton.addEventListener("click", button => {
+	calculator.tan();
+	calculator.updateDisplay();
+});
+
+eButton.addEventListener("click", button => {
+	calculator.e();
+	calculator.updateDisplay();
+});
+
+piButton.addEventListener("click", button => {
+	calculator.pi();
 	calculator.updateDisplay();
 });
 
