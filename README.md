@@ -1,6 +1,8 @@
 # Vanilla-JavaScript-Calculator
 Pure vanilla JavaScript calculator using modern ES6 syntax and classes
 
+Arrow functions inside event listeners   equalsButton, allClearButton, deleteButton don't need button argument. they can be  like this ()=> {code}, in case like this button=>{}, button doesn't have any purpose.
+
 Event delegation will be much better option instead of forEach() on numberButtons and operationButtons. With forEach() you are creating events for all buttons. That is a bad practice.
 With event delegation you don't create click event for each button, just for buttons that are clicked. 
 This is my solution: 
