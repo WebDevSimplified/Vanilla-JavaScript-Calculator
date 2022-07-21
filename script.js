@@ -24,17 +24,25 @@ class Calculator {
     if (this.currentOperand === '') return
     if (this.previousOperand !== '') {
       this.compute()
-    }
+    }    
     this.operation = operation
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
   }
 
   compute() {
+    let indicator = 0;
+    if(aSpecialOperations.indexOf(this.operation)> -1){
+      indicator = 1;
+    }
     let computation
     const prev = parseFloat(this.previousOperand)
     const current = parseFloat(this.currentOperand)
-    if (isNaN(prev) || isNaN(current)) return
+    if(!indicator){
+      if ((isNaN(prev)) || isNaN(current)) return
+    }else{
+      if (isNaN(prev)) return
+    }
     switch (this.operation) {
       case '+':
         computation = prev + current
@@ -47,6 +55,21 @@ class Calculator {
         break
       case '÷':
         computation = prev / current
+      case '%':
+        computation = prev * current / 100
+        break
+      case '!':
+        let result = 1;
+        for(let i=1; i <= prev; i++){
+          result = result * i;
+        }
+        computation = result
+        break
+      case '²':
+        computation = prev * prev
+        break
+      case '√':
+        computation = Math.round(Math.sqrt(prev) * roundNumbers) / roundNumbers
         break
       default:
         return
@@ -82,6 +105,9 @@ class Calculator {
     } else {
       this.previousOperandTextElement.innerText = ''
     }
+    if(aSpecialOperations.indexOf(this.operation)> -1){
+      document.querySelector('[data-equals]').dispatchEvent(new Event("click"));
+    }
   }
 }
 
@@ -93,6 +119,8 @@ const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
+const roundNumbers = 100000
+const aSpecialOperations = ['!', '√', '²'];
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
