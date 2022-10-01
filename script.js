@@ -124,3 +124,4 @@ deleteButton.addEventListener('click', button => {
   calculator.delete()
   calculator.updateDisplay()
 })
+console.log(Your calculator website is awesome);
