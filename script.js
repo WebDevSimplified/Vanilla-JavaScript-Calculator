@@ -5,23 +5,27 @@ class Calculator {
     this.clear()
   }
 
+  // Resets Everything
   clear() {
     this.currentOperand = ''
     this.previousOperand = ''
     this.operation = undefined
   }
 
+  // Removes the last character from the [Current Operation] String
   delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1)
   }
 
+  // Adds character to current operation
   appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.')) return
+    if (number === '.' && this.currentOperand.includes('.')) return // If trying to add a second decimal, return
     this.currentOperand = this.currentOperand.toString() + number.toString()
   }
 
+  // When [data-operation] button clicked
   chooseOperation(operation) {
-    if (this.currentOperand === '') return
+    if (this.currentOperand === '') return // If no operation, return
     if (this.previousOperand !== '') {
       this.compute()
     }
@@ -35,6 +39,7 @@ class Calculator {
     const prev = parseFloat(this.previousOperand)
     const current = parseFloat(this.currentOperand)
     if (isNaN(prev) || isNaN(current)) return
+    console.log(this.previousOperand, this.currentOperand, this.operation)
     switch (this.operation) {
       case '+':
         computation = prev + current
@@ -46,6 +51,10 @@ class Calculator {
         computation = prev * current
         break
       case '÷':
+        if ((this.operation == '÷') && (this.currentOperand == '0')) {
+          computation = 'Error';
+          break
+        }
         computation = prev / current
         break
       default:
@@ -57,6 +66,7 @@ class Calculator {
   }
 
   getDisplayNumber(number) {
+    if (isNaN(number)) return number // If input variable is not a number, return
     const stringNumber = number.toString()
     const integerDigits = parseFloat(stringNumber.split('.')[0])
     const decimalDigits = stringNumber.split('.')[1]
