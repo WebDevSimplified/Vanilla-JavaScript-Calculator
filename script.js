@@ -21,7 +21,11 @@ class Calculator {
   }
 
   chooseOperation(operation) {
-    if (this.currentOperand === '') return
+    if (this.currentOperand === '' || this.currentOperand === '-') {
+      if (this.currentOperand === '-' && operation === '-') return; // Prevent adding multiple '-' signs
+      this.currentOperand += operation; // Append the '-' sign to the current operand
+      return;
+    }
     if (this.previousOperand !== '') {
       this.compute()
     }
